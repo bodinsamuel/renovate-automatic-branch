@@ -8,6 +8,7 @@
     "build": "tsc -b",
     "build:docker": "docker build . -t bodinsamuel/renovate-automatic-branch",
     "build:hot": "tsc -w",
+    "build:ga": "tsc && ncc build ./dist/githubAction.js -o ./dist-ga -s -m",
     "clean": "rm -rf dist/"
   },
   "repository": "git+https://github.com/bodinsamuel/renovate-automatic-branch.git",
@@ -24,6 +25,7 @@
     "dependency"
   ],
   "dependencies": {
+    "@actions/core": "1.9.0",
     "@octokit/rest": "19.0.3",
     "@types/node": "18.0.3",
     "typescript": "4.7.4"
@@ -32,6 +34,7 @@
     "@babel/eslint-parser": "^7.18.2",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
+    "@vercel/ncc": "0.34.0",
     "eslint": "^8.19.0",
     "eslint-config-algolia": "^20.0.0",
     "eslint-config-prettier": "^8.5.0",
