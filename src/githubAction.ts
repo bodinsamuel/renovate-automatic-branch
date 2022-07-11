@@ -1,7 +1,6 @@
 import * as core from '@actions/core';
-import { run } from './run';
 
-const ALGOLIA_APP_ID = core.getInput('algolia-app-id');
+import { run } from './run';
 
 (async (): Promise<void> => {
   await run({
