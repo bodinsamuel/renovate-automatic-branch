@@ -15,9 +15,9 @@ const defaultOptions: Options = {
   repo: process.env.RAB_REPO || 'crawler',
   branchToCreate:
     process.env.RAB_BRANCH_TO_CREATE || 'chore/renovateBaseBranch',
-  branchBase: process.env.RAB_BRANCH_BASE || 'master',
+  branchBase: process.env.RAB_BRANCH_BASE || 'main',
   emptyCommitMessage:
-    process.env.RAB_EMPTY_COMMIT_MSG || 'Automatic empty commit',
+    process.env.RAB_EMPTY_COMMIT_MSG || 'chore: automatic empty commit',
 };
 
 export async function run(args: Partial<Options>): Promise<void> {
