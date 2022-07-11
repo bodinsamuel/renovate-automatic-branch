@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "lint": "eslint --ext=jsx,ts,tsx,js ${ESLINT_TARGET_FOLDER:-.}"
+    "lint": "eslint --ext=jsx,ts,tsx,js ${ESLINT_TARGET_FOLDER:-.}",
+    "build": "tsc -b",
+    "build:docker": "docker build . -t bodinsamuel/renovate-automatic-branch",
+    "build:hot": "tsc -w",
+    "clean": "rm -rf dist/"
   },
   "repository": "git+https://github.com/bodinsamuel/renovate-automatic-branch.git",
   "author": "Samuel Bodin <bodin.samuel@gmail.com>",
