@@ -25,11 +25,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Renovate Automatic Branch
-        uses: bodinsamuel/renovate-automatic-branch@v1.0.2
+        uses: bodinsamuel/renovate-automatic-branch@v1.0.3
         with:
-          github-token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-          repo-owner: bodinsamuel
-          repo-name: renovate-automatic-branch
+          github-token: YOUR_GITHUB_TOKEN
+          repo-owner: YOUR_ORG
+          repo-name: YOUR_REPO
 ```
 
 ```yaml
@@ -44,7 +44,7 @@ jobs:
             -e RAB_GH_TOKEN='${{ secrets.PERSONAL_GITHUB_TOKEN }}' \
             -e RAB_OWNER='${{ github.repository_owner }}' \
             -e RAB_REPO='renovate-automatic-branch' \
-            ghcr.io/bodinsamuel/renovate-automatic-branch:1.0.0
+            ghcr.io/bodinsamuel/renovate-automatic-branch:latest
 ```
 
 ```yaml
@@ -62,7 +62,7 @@ docker run --rm -i \
   -e RAB_GH_TOKEN='${{ secrets.PERSONAL_GITHUB_TOKEN }}' \
   -e RAB_OWNER='${{ github.repository_owner }}' \
   -e RAB_REPO='renovate-automatic-branch' \
-  ghcr.io/bodinsamuel/renovate-automatic-branch:1.0.0
+  ghcr.io/bodinsamuel/renovate-automatic-branch:latest
 ```
 
 ### Programmatic
