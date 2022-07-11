@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Renovate Automatic Branch
-        uses: bodinsamuel/renovate-automatic-branch
+        uses: ./
         with:
           github-token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
           repo-owner: bodinsamuel
