@@ -1,5 +1,7 @@
 name: Test
 on:
+  schedule:
+    - cron: '0 14 * * 5'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -7,14 +9,6 @@ on:
         type: boolean
         default: 'true'
         description: 'DryRun?'
-
-env:
-  RAB_GH_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-  RAB_OWNER: ${{ github.repository_owner }}
-  RAB_REPO: renovate-automatic-branch
-  # RAB_BRANCH_TO_CREATE:
-  # RAB_BRANCH_BASE:
-  # RAB_EMPTY_COMMIT_MSG:
 
 jobs:
   test:
