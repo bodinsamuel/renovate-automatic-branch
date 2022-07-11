@@ -1,5 +1,6 @@
-import { Octokit } from "@octokit/rest";
-import { Options } from "./types";
+import type { Octokit } from '@octokit/rest';
+
+import type { Options } from './types';
 
 export function wait(waitTime: number): Promise<void> {
   if (waitTime <= 0) {
@@ -13,7 +14,7 @@ export function wait(waitTime: number): Promise<void> {
 export async function getRef(
   octokit: Octokit,
   branch: string,
-  opts: Options,
+  opts: Options
 ): Promise<string | false> {
   try {
     const ref = await octokit.git.getRef({
@@ -31,8 +32,11 @@ export async function getRef(
   return false;
 }
 
-export async function createBranch(octokit: Octokit, sha: string,
-  opts: Options,): Promise<any> {
+export async function createBranch(
+  octokit: Octokit,
+  sha: string,
+  opts: Options
+): Promise<any> {
   const create = await octokit.git.createRef({
     owner: opts.owner,
     repo: opts.repo,
@@ -54,7 +58,8 @@ export async function deleteRef(octokit: Octokit, opts: Options): Promise<any> {
 
 export async function updateRef(
   octokit: Octokit,
-  sha: string, opts: Options
+  sha: string,
+  opts: Options
 ): Promise<any> {
   console.log(`Changing ref for ${opts.branchToCreate} to`, sha);
   const ref = await octokit.git.updateRef({
@@ -66,7 +71,11 @@ export async function updateRef(
   return ref;
 }
 
-export async function getCommit(octokit: Octokit, sha: string, opts: Options): Promise<any> {
+export async function getCommit(
+  octokit: Octokit,
+  sha: string,
+  opts: Options
+): Promise<any> {
   const commit = await octokit.git.getCommit({
     owner: opts.owner,
     repo: opts.repo,
@@ -81,7 +90,8 @@ export function isCommitAnEmptyCommit(commit: any, opts: Options): boolean {
 
 export async function createEmptyCommit(
   octokit: Octokit,
-  refCommit: any, opts: Options
+  refCommit: any,
+  opts: Options
 ): Promise<any> {
   console.log('Creating empty commit');
   const commit = await octokit.git.createCommit({
@@ -104,9 +114,7 @@ export async function createPR(octokit: Octokit, opts: Options): Promise<any> {
     owner: opts.owner,
     repo: opts.repo,
     title,
-    body: `Weekly dependencies update.
-Contributes to #5336
-    `,
+    body: `Weekly dependencies update.`,
     head: opts.branchToCreate,
     base: opts.branchBase,
   });
@@ -116,7 +124,8 @@ Contributes to #5336
 export async function resetBranch(
   octokit: Octokit,
   refBase: string,
-  exists: boolean, opts: Options
+  exists: boolean,
+  opts: Options
 ): Promise<void> {
   if (exists) {
     console.log('Deleting branch');

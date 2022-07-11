@@ -7,4 +7,7 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
   ],
+  rules: {
+    'no-console': 'off',
+  },
 };

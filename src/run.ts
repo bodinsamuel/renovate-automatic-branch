@@ -1,32 +1,41 @@
-import { Octokit } from "@octokit/rest";
-import { createPR, getCommit, getRef, isCommitAnEmptyCommit, resetBranch } from "./helpers";
-import { Options } from "./types";
+import { Octokit } from '@octokit/rest';
+
+import {
+  createPR,
+  getCommit,
+  getRef,
+  isCommitAnEmptyCommit,
+  resetBranch,
+} from './helpers';
+import type { Options } from './types';
 
 const defaultOptions: Options = {
   ghToken: process.env.RAB_GH_TOKEN || '',
   owner: process.env.RAB_OWNER || '',
-  repo: process.env.RAB_REPO ||'crawler',
-  branchToCreate: process.env.RAB_BRANCH_TO_CREATE ||'chore/renovateBaseBranch',
-  branchBase: process.env.RAB_BRANCH_BASE ||'master',
-  emptyCommitMessage:  process.env.RAB_EMPTY_COMMIT_MSG ||'Automatic empty commit',
-}
+  repo: process.env.RAB_REPO || 'crawler',
+  branchToCreate:
+    process.env.RAB_BRANCH_TO_CREATE || 'chore/renovateBaseBranch',
+  branchBase: process.env.RAB_BRANCH_BASE || 'master',
+  emptyCommitMessage:
+    process.env.RAB_EMPTY_COMMIT_MSG || 'Automatic empty commit',
+};
 
-export async function run(args: Partial<Options>) {
-  const opts: Options =  { ...defaultOptions, ...args };
-  if (typeof opts.ghToken == 'undefined') {
-    throw new Error("missing `ghToken`");
+export async function run(args: Partial<Options>): Promise<void> {
+  const opts: Options = { ...defaultOptions, ...args };
+  if (typeof opts.ghToken === 'undefined') {
+    throw new Error('missing `ghToken`');
   }
-  if (typeof opts.branchBase == 'undefined') {
-    throw new Error("missing `branchBase`");
+  if (typeof opts.branchBase === 'undefined') {
+    throw new Error('missing `branchBase`');
   }
-  if (typeof opts.branchToCreate == 'undefined') {
-    throw new Error("missing `branchToCreate`");
+  if (typeof opts.branchToCreate === 'undefined') {
+    throw new Error('missing `branchToCreate`');
   }
-  if (typeof opts.owner == 'undefined') {
-    throw new Error("missing `owner`");
+  if (typeof opts.owner === 'undefined') {
+    throw new Error('missing `owner`');
   }
-  if (typeof opts.repo == 'undefined') {
-    throw new Error("missing `repo`");
+  if (typeof opts.repo === 'undefined') {
+    throw new Error('missing `repo`');
   }
 
   try {
