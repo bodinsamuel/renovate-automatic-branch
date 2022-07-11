@@ -1,4 +1,4 @@
-name: Test
+name: Test Docker
 on:
   schedule:
     - cron: '0 14 * * 5'
@@ -21,4 +21,4 @@ jobs:
             -e RAB_GH_TOKEN='${{ secrets.PERSONAL_GITHUB_TOKEN }}' \
             -e RAB_OWNER='${{ github.repository_owner }}' \
             -e RAB_REPO='renovate-automatic-branch' \
-            ghcr.io/bodinsamuel/renovate-automatic-branch:1.0.0
+            ghcr.io/bodinsamuel/renovate-automatic-branch:latest
