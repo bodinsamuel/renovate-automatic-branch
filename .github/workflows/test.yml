@@ -14,8 +14,8 @@ env:
 jobs:
   test:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/bodinsamuel/renovate-automatic-branch:1.0.0
 
     steps:
       - name: Test
-        container:
-          image: ghcr.io/bodinsamuel/renovate-automatic-branch:1.0.0
