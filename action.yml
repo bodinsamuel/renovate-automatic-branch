@@ -32,4 +32,4 @@ inputs:
 
 runs:
   using: 'node16'
-  main: 'build-ga/index.js'
+  main: 'dist-ga/index.js'
