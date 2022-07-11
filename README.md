@@ -19,11 +19,21 @@ Configure your renovate with:
 ### Github Action
 
 ```yaml
-name: Test
-on:
-  schedule:
-    - cron: '0 14 * * 5' # Every friday afternoon
+# With Github Action
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Renovate Automatic Branch
+        uses: bodinsamuel/renovate-automatic-branch@v1.0.2
+        with:
+          github-token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+          repo-owner: bodinsamuel
+          repo-name: renovate-automatic-branch
+```
 
+```yaml
+# With Docker image
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -37,6 +47,14 @@ jobs:
             ghcr.io/bodinsamuel/renovate-automatic-branch:1.0.0
 ```
 
+```yaml
+# To automate
+name: Test
+on:
+  schedule:
+    - cron: '0 14 * * 5' # e.g: Every friday afternoon
+```
+
 ### Docker image
 
 ```sh
@@ -48,3 +66,16 @@ docker run --rm -i \
 ```
 
 ### Programmatic
+
+```sh
+npm install -ED renovate-automatic-branch
+```
+
+```ts
+import { run } from 'renovate-automatic-branch/run';
+
+run({
+  ghToken: process.env.TOKEN,
+  // [...]
+})
+```
