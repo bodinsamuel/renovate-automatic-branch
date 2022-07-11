@@ -55,7 +55,6 @@ jobs:
           context: .
           platforms: linux/amd64 # buildx does not support multi-arch load
           push: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run != 'true') }}
-          load: true
           tags: |
             ghcr.io/bodinsamuel/renovate-automatic-branch:latest
             ghcr.io/bodinsamuel/renovate-automatic-branch:${{ steps.env_var.outputs.VERSION }}
