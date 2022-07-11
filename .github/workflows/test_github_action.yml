@@ -1,4 +1,4 @@
-name: Test Docker
+name: Test Github Action
 on:
   schedule:
     - cron: '0 14 * * 5'
