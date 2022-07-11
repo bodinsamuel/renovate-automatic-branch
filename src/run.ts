@@ -12,7 +12,7 @@ import type { Options } from './types';
 const defaultOptions: Options = {
   ghToken: process.env.RAB_GH_TOKEN || '',
   owner: process.env.RAB_OWNER || '',
-  repo: process.env.RAB_REPO || 'crawler',
+  repo: process.env.RAB_REPO || '',
   branchToCreate:
     process.env.RAB_BRANCH_TO_CREATE || 'chore/renovateBaseBranch',
   branchBase: process.env.RAB_BRANCH_BASE || 'main',
