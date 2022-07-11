@@ -40,6 +40,8 @@ RUN true \
 # ------------------
 FROM node:16.14.2-bullseye as web
 
+LABEL org.opencontainers.image.source = "https://github.com/bodinsamuel/renovate-automatic-branch"
+
 ARG git_hash
 ARG version
 

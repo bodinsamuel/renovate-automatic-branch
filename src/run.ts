@@ -22,19 +22,19 @@ const defaultOptions: Options = {
 
 export async function run(args: Partial<Options>): Promise<void> {
   const opts: Options = { ...defaultOptions, ...args };
-  if (typeof opts.ghToken === 'undefined') {
+  if (!opts.ghToken) {
     throw new Error('missing `ghToken`');
   }
-  if (typeof opts.branchBase === 'undefined') {
+  if (!opts.branchBase) {
     throw new Error('missing `branchBase`');
   }
-  if (typeof opts.branchToCreate === 'undefined') {
+  if (!opts.branchToCreate) {
     throw new Error('missing `branchToCreate`');
   }
-  if (typeof opts.owner === 'undefined') {
+  if (!opts.owner) {
     throw new Error('missing `owner`');
   }
-  if (typeof opts.repo === 'undefined') {
+  if (!opts.repo) {
     throw new Error('missing `repo`');
   }
 
