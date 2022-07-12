@@ -8,7 +8,7 @@ on:
       dry_run:
         required: true
         type: boolean
-        default: 'true'
+        default: true
         description: 'DryRun?'
 
 env:
@@ -62,4 +62,3 @@ jobs:
           cache-to: type=gha,mode=max
           build-args: |
             VERSION=${{ steps.env_var.outputs.VERSION }}
-
