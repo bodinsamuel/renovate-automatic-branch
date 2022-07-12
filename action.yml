@@ -29,7 +29,7 @@ inputs:
     required: false
     default: 'chore: automatic empty commit'
   pull-request-body:
-    description: 'The body (desciption) of the pull request opened by the action'
+    description: 'The body (description) of the pull request opened by the action'
     required: false
     default: 'Weekly dependencies update.'
 
