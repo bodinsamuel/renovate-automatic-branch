@@ -114,7 +114,7 @@ export async function createPR(octokit: Octokit, opts: Options): Promise<any> {
     owner: opts.owner,
     repo: opts.repo,
     title,
-    body: `Weekly dependencies update.`,
+    body: opts.pullRequestBody || 'Weekly dependencies update.',
     head: opts.branchToCreate,
     base: opts.branchBase,
   });

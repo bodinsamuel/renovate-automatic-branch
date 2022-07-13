@@ -21,11 +21,11 @@ Configure your renovate with:
 ```yaml
 # With Github Action
 jobs:
-  test:
+  renovate:
     runs-on: ubuntu-latest
     steps:
       - name: Renovate Automatic Branch
-        uses: bodinsamuel/renovate-automatic-branch@v1.0.3
+        uses: bodinsamuel/renovate-automatic-branch@v1
         with:
           github-token: YOUR_GITHUB_TOKEN
           repo-owner: YOUR_ORG
@@ -35,7 +35,7 @@ jobs:
 ```yaml
 # With Docker image
 jobs:
-  test:
+  renovate:
     runs-on: ubuntu-latest
     steps:
       - name: Test
@@ -49,11 +49,22 @@ jobs:
 
 ```yaml
 # To automate
-name: Test
+name: Renovate
 on:
   schedule:
     - cron: '0 14 * * 5' # e.g: Every friday afternoon
 ```
+
+### Optional parameters
+
+You can customize the behavior of the action by providing the following parameters:
+
+| parameter         | description                                                    | default value                   |
+|-------------------|----------------------------------------------------------------|---------------------------------|
+| branch-to-create  | The name of the branch that will be created                    | `chore/renovateBaseBranch`      |
+| branch-base       | The name of the branch that will be used as base               | `main`                          |
+| empty-commit-msg  | The commit msg that will be created by the script              | `chore: automatic empty commit` |
+| pull-request-body | The body (desciption) of the pull request opened by the action | `Weekly dependencies update.`   |
 
 ### Docker image
 

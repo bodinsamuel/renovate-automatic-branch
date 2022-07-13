@@ -5,4 +5,5 @@ export interface Options {
   branchToCreate: string;
   branchBase: string;
   emptyCommitMessage?: string;
+  pullRequestBody?: string;
 }

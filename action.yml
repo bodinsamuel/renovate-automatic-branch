@@ -1,8 +1,8 @@
 name: 'Renovate Automatic Branch'
 description: 'Automatically create an empty branch to merge Renovate PR.'
 branding:
-  icon: "upload-cloud"
-  color: "blue"
+  icon: 'upload-cloud'
+  color: 'blue'
 
 inputs:
   # CREDENTIALS
@@ -17,18 +17,21 @@ inputs:
     description: 'Repo Name'
     required: true
   branch-to-create:
-    description: 'The branch name that will be created'
+    description: 'The name of the branch that will be created'
     required: false
     default: 'chore/renovateBaseBranch'
   branch-base:
-    description: 'The branch name that will be used as base'
+    description: 'The name of the branch that will be used as base'
     required: false
     default: 'main'
   empty-commit-msg:
     description: 'The commit msg that will be created by the script'
     required: false
     default: 'chore: automatic empty commit'
-
+  pull-request-body:
+    description: 'The body (description) of the pull request opened by the action'
+    required: false
+    default: 'Weekly dependencies update.'
 
 runs:
   using: 'node16'

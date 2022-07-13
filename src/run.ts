@@ -18,6 +18,8 @@ const defaultOptions: Options = {
   branchBase: process.env.RAB_BRANCH_BASE || 'main',
   emptyCommitMessage:
     process.env.RAB_EMPTY_COMMIT_MSG || 'chore: automatic empty commit',
+  pullRequestBody:
+    process.env.RAB_PULL_REQUEST_BODY || 'Weekly dependencies update.',
 };
 
 export async function run(args: Partial<Options>): Promise<void> {
