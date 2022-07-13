@@ -32,8 +32,8 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.18.2",
-    "@typescript-eslint/eslint-plugin": "5.30.5",
-    "@typescript-eslint/parser": "5.30.5",
+    "@typescript-eslint/eslint-plugin": "5.30.6",
+    "@typescript-eslint/parser": "5.30.6",
     "@vercel/ncc": "0.34.0",
     "eslint": "8.19.0",
     "eslint-config-algolia": "20.0.0",
