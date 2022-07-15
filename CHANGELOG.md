@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/bodinsamuel/renovate-automatic-branch/compare/v1.0.7...v1.0.8) (2022-07-15)
+
+
+### Bug Fixes
+
+* publish everything to git ([68ebd27](https://github.com/bodinsamuel/renovate-automatic-branch/commit/68ebd276233c0e8273223d1432a1eaf9ce2a0a49))
+
 ## [1.0.7](https://github.com/bodinsamuel/renovate-automatic-branch/compare/v1.0.6...v1.0.7) (2022-07-15)
 
 
