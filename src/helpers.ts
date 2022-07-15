@@ -109,7 +109,9 @@ export async function createPR(octokit: Octokit, opts: Options): Promise<any> {
   const date = new Date();
   date.setDate(date.getDate() + 3);
 
-  const title = `fix: dependencies ${date.toISOString().split('T')[0]}`;
+  const title = `${opts.pullRequestTitle || 'fix: dependencies'} ${
+    date.toISOString().split('T')[0]
+  }`;
   const { data } = await octokit.pulls.create({
     owner: opts.owner,
     repo: opts.repo,

@@ -10,6 +10,7 @@ import { run } from './run';
     branchToCreate: core.getInput('branch-to-create'),
     branchBase: core.getInput('branch-base'),
     emptyCommitMessage: core.getInput('empty-commit-msg'),
+    pullRequestTitle: core.getInput('pull-request-title'),
     pullRequestBody: core.getInput('pull-request-body'),
   });
 })();
