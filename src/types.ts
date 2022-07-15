@@ -6,4 +6,5 @@ export interface Options {
   branchBase: string;
   emptyCommitMessage?: string;
   pullRequestBody?: string;
+  pullRequestTitle?: string;
 }

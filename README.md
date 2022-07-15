@@ -59,12 +59,13 @@ on:
 
 You can customize the behavior of the action by providing the following parameters:
 
-| parameter         | description                                                    | default value                   |
-|-------------------|----------------------------------------------------------------|---------------------------------|
-| branch-to-create  | The name of the branch that will be created                    | `chore/renovateBaseBranch`      |
-| branch-base       | The name of the branch that will be used as base               | `main`                          |
-| empty-commit-msg  | The commit msg that will be created by the script              | `chore: automatic empty commit` |
-| pull-request-body | The body (desciption) of the pull request opened by the action | `Weekly dependencies update.`   |
+| parameter          | description                                                     | default value                   |
+|--------------------|-----------------------------------------------------------------|---------------------------------|
+| branch-to-create   | The name of the branch that will be created                     | `chore/renovateBaseBranch`      |
+| branch-base        | The name of the branch that will be used as base                | `main`                          |
+| empty-commit-msg   | The commit msg that will be created by the script               | `chore: automatic empty commit` |
+| pull-request-title | The title of the pull request opened by the action              | `fix: dependencies`             |
+| pull-request-body  | The body (description) of the pull request opened by the action | `Weekly dependencies update.`   |
 
 ### Docker image
 
@@ -75,6 +76,8 @@ docker run --rm -i \
   -e RAB_REPO='renovate-automatic-branch' \
   ghcr.io/bodinsamuel/renovate-automatic-branch:latest
 ```
+
+Available environment variables: [constants.ts](src/constants.ts)
 
 ### Programmatic
 

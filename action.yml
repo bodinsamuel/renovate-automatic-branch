@@ -28,6 +28,10 @@ inputs:
     description: 'The commit msg that will be created by the script'
     required: false
     default: 'chore: automatic empty commit'
+  pull-request-title:
+    description: 'The PR title'
+    required: false
+    default: 'fix: dependencies'
   pull-request-body:
     description: 'The body (description) of the pull request opened by the action'
     required: false
