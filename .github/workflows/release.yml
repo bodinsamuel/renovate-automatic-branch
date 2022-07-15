@@ -31,7 +31,7 @@ jobs:
 
       - run: yarn install
 
-      - run: yarn build && build:ga
+      - run: yarn build && yarn build:ga
 
       - uses: cycjimmy/semantic-release-action@v3
         env:
