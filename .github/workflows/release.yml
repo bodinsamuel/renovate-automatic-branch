@@ -1,0 +1,39 @@
+name: Release
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        required: true
+        type: boolean
+        default: true
+        description: 'DryRun?'
+
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    name: Release
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - name: Cache node_modules
+        id: cache-modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: 16.x-${{ runner.OS }}-build-${{ hashFiles('package.json') }}
+
+      - run: yarn install
+
+      - run: yarn build && build:ga
+
+      - uses: cycjimmy/semantic-release-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

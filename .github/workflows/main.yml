@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main ]
+    types: [opened, synchronize]
 
 env:
   COMMIT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}

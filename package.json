@@ -9,7 +9,7 @@
     "build:docker": "docker build . -t bodinsamuel/renovate-automatic-branch",
     "build:hot": "tsc -w",
     "build:ga": "tsc && ncc build ./dist/githubAction.js -o ./dist-ga -s -m",
-    "clean": "rm -rf dist/"
+    "clean": "rm -rf dist/ && rm -rf dist-ga/"
   },
   "repository": "git+https://github.com/bodinsamuel/renovate-automatic-branch.git",
   "author": "Samuel Bodin <bodin.samuel@gmail.com>",
@@ -32,6 +32,10 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.2",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "8.0.5",
+    "@semantic-release/npm": "9.0.1",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
     "@vercel/ncc": "0.34.0",
@@ -42,7 +46,8 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsdoc": "^39.3.3",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "semantic-release": "19.0.3"
   },
   "packageManager": "yarn@3.2.1",
   "files": [
