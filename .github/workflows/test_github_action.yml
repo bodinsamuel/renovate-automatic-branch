@@ -24,3 +24,4 @@ jobs:
           github-token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
           repo-owner: bodinsamuel
           repo-name: renovate-automatic-branch
+          pull-request-body: Contributes to #4
