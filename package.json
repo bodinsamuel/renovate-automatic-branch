@@ -49,7 +49,7 @@
     "prettier": "2.8.4",
     "semantic-release": "19.0.5"
   },
-  "packageManager": "yarn@3.2.3",
+  "packageManager": "yarn@3.5.0",
   "files": [
     "dist/",
     "CHANGELOG.md"
