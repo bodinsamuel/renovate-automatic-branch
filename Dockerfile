@@ -10,7 +10,7 @@ RUN jq 'walk(if type == "object" then with_entries(select(.key | test("^jest|pre
 # ------------------
 # deps install
 # ------------------
-FROM node:16.16.0-bullseye AS base
+FROM node:16.20.0-bullseye AS base
 
 # Setup the app WORKDIR
 WORKDIR /app/rab
@@ -38,7 +38,7 @@ RUN true \
 # ------------------
 # final image
 # ------------------
-FROM node:16.16.0-bullseye as web
+FROM node:16.20.0-bullseye as web
 
 LABEL org.opencontainers.image.source = "https://github.com/bodinsamuel/renovate-automatic-branch"
 

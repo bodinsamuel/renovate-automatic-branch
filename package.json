@@ -25,31 +25,31 @@
     "dependency"
   ],
   "dependencies": {
-    "@actions/core": "1.9.0",
-    "@octokit/rest": "19.0.3",
+    "@actions/core": "1.10.0",
+    "@octokit/rest": "19.0.13",
     "@types/node": "18.0.3",
-    "typescript": "4.9.4"
+    "typescript": "4.9.5"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.19.1",
-    "@semantic-release/changelog": "6.0.2",
+    "@babel/eslint-parser": "7.22.5",
+    "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "8.0.7",
-    "@semantic-release/npm": "9.0.1",
-    "@typescript-eslint/eslint-plugin": "5.51.0",
-    "@typescript-eslint/parser": "5.51.0",
-    "@vercel/ncc": "0.36.0",
-    "eslint": "8.34.0",
+    "@semantic-release/github": "8.1.0",
+    "@semantic-release/npm": "9.0.2",
+    "@typescript-eslint/eslint-plugin": "5.59.11",
+    "@typescript-eslint/parser": "5.59.11",
+    "@vercel/ncc": "0.36.1",
+    "eslint": "8.43.0",
     "eslint-config-algolia": "20.1.0",
-    "eslint-config-prettier": "8.5.0",
+    "eslint-config-prettier": "8.8.0",
     "eslint-plugin-eslint-comments": "3.2.0",
-    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jsdoc": "39.9.1",
     "eslint-plugin-prettier": "4.2.1",
-    "prettier": "2.8.4",
+    "prettier": "2.8.8",
     "semantic-release": "19.0.5"
   },
-  "packageManager": "yarn@3.2.3",
+  "packageManager": "yarn@3.6.0",
   "files": [
     "dist/",
     "CHANGELOG.md"
