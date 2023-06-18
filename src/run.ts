@@ -59,5 +59,6 @@ export async function run(args: Partial<Options>): Promise<void> {
     await createPR(octokit, opts);
   } catch (err) {
     console.error(err);
+    throw new Error('Error during process');
   }
 }
