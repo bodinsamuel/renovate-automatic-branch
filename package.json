@@ -31,7 +31,7 @@
     "typescript": "4.9.5"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.22.7",
+    "@babel/eslint-parser": "7.22.9",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "9.0.3",
