@@ -38,5 +38,5 @@ inputs:
     default: 'Weekly dependencies update.'
 
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist-ga/index.js'
