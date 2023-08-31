@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/bodinsamuel/renovate-automatic-branch/compare/v1.0.11...v1.0.12) (2023-08-31)
+
+
+### Bug Fixes
+
+* upgrade node again ([fb318d0](https://github.com/bodinsamuel/renovate-automatic-branch/commit/fb318d03860d419e0ce739ed515ac1a85f3a001c))
+
 ## [1.0.11](https://github.com/bodinsamuel/renovate-automatic-branch/compare/v1.0.10...v1.0.11) (2023-08-31)
 
 
