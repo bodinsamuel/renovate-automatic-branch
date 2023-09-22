@@ -27,7 +27,7 @@
   "dependencies": {
     "@actions/core": "1.10.0",
     "@octokit/rest": "20.0.1",
-    "@types/node": "18.0.3",
+    "@types/node": "18.17.18",
     "typescript": "4.9.5"
   },
   "devDependencies": {
