@@ -1206,10 +1206,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.0.3":
-  version: 18.0.3
-  resolution: "@types/node@npm:18.0.3"
-  checksum: 5dec59fbbc1186c808b53df1ca717dad034dbd6a901c75f5b052c845618b531b05f27217122c6254db99529a68618e4cfc534ae3dbf4e88754e9e572df80defa
+"@types/node@npm:18.18.1":
+  version: 18.18.1
+  resolution: "@types/node@npm:18.18.1"
+  checksum: 079085afc8615b91727900628410a2077f7fff51c5c3e20c4ab2d9caae4010b035aac13dae1221155e9d6ca46084aebf68121642140527b4009eee17b716d339
   languageName: node
   linkType: hard
 
@@ -6396,7 +6396,7 @@ __metadata:
     "@semantic-release/git": 10.0.1
     "@semantic-release/github": 9.2.1
     "@semantic-release/npm": 10.0.6
-    "@types/node": 18.0.3
+    "@types/node": 18.18.1
     "@typescript-eslint/eslint-plugin": 5.62.0
     "@typescript-eslint/parser": 5.62.0
     "@vercel/ncc": 0.38.0
