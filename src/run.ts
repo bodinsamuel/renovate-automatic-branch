@@ -51,6 +51,7 @@ export async function run(args: Partial<Options>): Promise<void> {
         console.log('Empty commit exists');
         return;
       }
+      return;
     }
 
     await resetBranch(octokit, refBase, Boolean(refTarget), opts);
