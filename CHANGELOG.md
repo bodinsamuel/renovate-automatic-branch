@@ -1,3 +1,12 @@
+## [1.0.13](https://github.com/bodinsamuel/renovate-automatic-branch/compare/v1.0.12...v1.0.13) (2023-10-19)
+
+
+### Bug Fixes
+
+* dependencies 2023-09-11 ([#307](https://github.com/bodinsamuel/renovate-automatic-branch/issues/307)) ([ceb870b](https://github.com/bodinsamuel/renovate-automatic-branch/commit/ceb870b1425eec7e2f30e61e1b8a70e30e731fd3)), closes [#308](https://github.com/bodinsamuel/renovate-automatic-branch/issues/308) [#309](https://github.com/bodinsamuel/renovate-automatic-branch/issues/309) [#311](https://github.com/bodinsamuel/renovate-automatic-branch/issues/311) [#312](https://github.com/bodinsamuel/renovate-automatic-branch/issues/312) [#310](https://github.com/bodinsamuel/renovate-automatic-branch/issues/310)
+* dependencies 2023-10-16 ([#350](https://github.com/bodinsamuel/renovate-automatic-branch/issues/350)) ([bca068b](https://github.com/bodinsamuel/renovate-automatic-branch/commit/bca068b1658e66a42a0c2efea251d325d62e1476)), closes [#353](https://github.com/bodinsamuel/renovate-automatic-branch/issues/353) [#354](https://github.com/bodinsamuel/renovate-automatic-branch/issues/354) [#351](https://github.com/bodinsamuel/renovate-automatic-branch/issues/351) [#352](https://github.com/bodinsamuel/renovate-automatic-branch/issues/352) [#355](https://github.com/bodinsamuel/renovate-automatic-branch/issues/355)
+* do not override branch ([b632cd5](https://github.com/bodinsamuel/renovate-automatic-branch/commit/b632cd51caf4d3551d502a91c911bafc9c5456e3))
+
 ## [1.0.12](https://github.com/bodinsamuel/renovate-automatic-branch/compare/v1.0.11...v1.0.12) (2023-08-31)
 
 
