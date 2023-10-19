@@ -25,9 +25,9 @@
     "dependency"
   ],
   "dependencies": {
-    "@actions/core": "1.10.0",
-    "@octokit/rest": "20.0.1",
-    "@types/node": "20.8.6",
+    "@actions/core": "^1.10.1",
+    "@octokit/rest": "^20.0.2",
+    "@types/node": "^20.8.7",
     "typescript": "4.9.5"
   },
   "devDependencies": {
@@ -36,17 +36,17 @@
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "9.2.1",
     "@semantic-release/npm": "10.0.6",
-    "@typescript-eslint/eslint-plugin": "5.62.0",
-    "@typescript-eslint/parser": "5.62.0",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
     "@vercel/ncc": "0.38.0",
     "eslint": "8.51.0",
     "eslint-config-algolia": "22.0.0",
-    "eslint-config-prettier": "8.10.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-eslint-comments": "3.2.0",
     "eslint-plugin-import": "2.27.5",
-    "eslint-plugin-jsdoc": "39.9.1",
-    "eslint-plugin-prettier": "4.2.1",
-    "prettier": "2.8.8",
+    "eslint-plugin-jsdoc": "^46.8.2",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.0.3",
     "semantic-release": "19.0.5"
   },
   "packageManager": "yarn@3.6.4",

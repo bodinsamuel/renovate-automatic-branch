@@ -9,5 +9,6 @@ module.exports = {
   ],
   rules: {
     'no-console': 'off',
+    '@typescript-eslint/prefer-optional-chain': 'off',
   },
 };
