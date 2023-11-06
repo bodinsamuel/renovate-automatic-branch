@@ -19,21 +19,20 @@ WORKDIR /app/rab
 # Copy and install dependencies separately from the app's code
 # To leverage Docker's cache when no dependency has change
 COPY --from=deps /tmp/deps.json ./package.json
-COPY yarn.lock .yarnrc.yml ./
-COPY .yarn .yarn
+COPY package-lock.json ./
 
 
 # Install dev dependencies
 RUN true \
-  && yarn install
+  && npm install
 
 # This step will invalidates cache
 COPY . ./
 
 # Build
 RUN true \
-  && yarn build \
-  && rm -rf .yarn/
+  && npm run build \
+  && rm -rf src/
 
 # ------------------
 # final image
