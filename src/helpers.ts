@@ -1,4 +1,4 @@
-import type { Octokit } from '@octokit/rest';
+import type { Octokit, RestEndpointMethodTypes } from '@octokit/rest';
 
 import type { Options } from './types';
 
@@ -24,7 +24,10 @@ export async function getRef(
     });
     return ref.data.object.sha;
   } catch (err) {
-    if (!(err instanceof Error) || (err as any).status !== 404) {
+    if (
+      !(err instanceof Error) ||
+      (err as Error & { status: number }).status !== 404
+    ) {
       throw err;
     }
   }
@@ -36,7 +39,7 @@ export async function createBranch(
   octokit: Octokit,
   sha: string,
   opts: Options
-): Promise<any> {
+): Promise<RestEndpointMethodTypes['git']['createRef']['response']> {
   const create = await octokit.git.createRef({
     owner: opts.owner,
     repo: opts.repo,
@@ -46,7 +49,10 @@ export async function createBranch(
   return create;
 }
 
-export async function deleteRef(octokit: Octokit, opts: Options): Promise<any> {
+export async function deleteRef(
+  octokit: Octokit,
+  opts: Options
+): Promise<RestEndpointMethodTypes['git']['deleteRef']['response']> {
   console.log(`Deleting ref for ${opts.branchToCreate}`);
   const ref = await octokit.git.deleteRef({
     owner: opts.owner,
@@ -60,7 +66,7 @@ export async function updateRef(
   octokit: Octokit,
   sha: string,
   opts: Options
-): Promise<any> {
+): Promise<RestEndpointMethodTypes['git']['updateRef']['response']> {
   console.log(`Changing ref for ${opts.branchToCreate} to`, sha);
   const ref = await octokit.git.updateRef({
     owner: opts.owner,
@@ -75,7 +81,7 @@ export async function getCommit(
   octokit: Octokit,
   sha: string,
   opts: Options
-): Promise<any> {
+): Promise<RestEndpointMethodTypes['git']['getCommit']['response']['data']> {
   const commit = await octokit.git.getCommit({
     owner: opts.owner,
     repo: opts.repo,
@@ -84,15 +90,18 @@ export async function getCommit(
   return commit.data;
 }
 
-export function isCommitAnEmptyCommit(commit: any, opts: Options): boolean {
-  return commit.message.search(opts.emptyCommitMessage!) >= 0;
+export function isCommitAnEmptyCommit(
+  commit: RestEndpointMethodTypes['git']['getCommit']['response']['data'],
+  opts: Required<Options>
+): boolean {
+  return commit.message.search(opts.emptyCommitMessage) >= 0;
 }
 
 export async function createEmptyCommit(
   octokit: Octokit,
-  refCommit: any,
+  refCommit: RestEndpointMethodTypes['git']['getCommit']['response']['data'],
   opts: Options
-): Promise<any> {
+): Promise<RestEndpointMethodTypes['git']['createCommit']['response']['data']> {
   console.log('Creating empty commit');
   const commit = await octokit.git.createCommit({
     owner: opts.owner,
@@ -104,7 +113,10 @@ export async function createEmptyCommit(
   return commit.data;
 }
 
-export async function createPR(octokit: Octokit, opts: Options): Promise<any> {
+export async function createPR(
+  octokit: Octokit,
+  opts: Options
+): Promise<RestEndpointMethodTypes['pulls']['create']['response']['data']> {
   // Next monday
   const date = new Date();
   date.setDate(date.getDate() + 3);

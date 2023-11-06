@@ -19,21 +19,17 @@ jobs:
           persist-credentials: false
 
       - name: Install Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-          cache: yarn
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
 
-      - name: Cache node_modules
-        id: cache-modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: 16.x-${{ runner.OS }}-build-${{ hashFiles('package.json') }}
+      - name: Install dependencies
+        run: npm ci
 
-      - run: yarn install
-
-      - run: yarn build && yarn build:ga
+      - run: npm run build && npm run build:ga
 
       - uses: cycjimmy/semantic-release-action@v3
         env:

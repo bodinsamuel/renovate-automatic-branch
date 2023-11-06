@@ -10,7 +10,7 @@ RUN jq 'walk(if type == "object" then with_entries(select(.key | test("^jest|pre
 # ------------------
 # deps install
 # ------------------
-FROM node:20.8.0-bullseye AS base
+FROM node:20.9.0-bullseye AS base
 
 # Setup the app WORKDIR
 WORKDIR /app/rab
@@ -19,26 +19,25 @@ WORKDIR /app/rab
 # Copy and install dependencies separately from the app's code
 # To leverage Docker's cache when no dependency has change
 COPY --from=deps /tmp/deps.json ./package.json
-COPY yarn.lock .yarnrc.yml ./
-COPY .yarn .yarn
+COPY package-lock.json ./
 
 
 # Install dev dependencies
 RUN true \
-  && yarn install
+  && npm install
 
 # This step will invalidates cache
 COPY . ./
 
 # Build
 RUN true \
-  && yarn build \
-  && rm -rf .yarn/
+  && npm run build \
+  && rm -rf src/
 
 # ------------------
 # final image
 # ------------------
-FROM node:20.8.0-bullseye as web
+FROM node:20.9.0-bullseye as web
 
 LABEL org.opencontainers.image.source = "https://github.com/bodinsamuel/renovate-automatic-branch"
 
