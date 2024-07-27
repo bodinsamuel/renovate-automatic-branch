@@ -30,7 +30,7 @@
     "typescript": "5.5.4"
   },
   "devDependencies": {
-    "@types/node": "20.14.11",
+    "@types/node": "20.14.12",
     "@babel/eslint-parser": "7.24.8",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
