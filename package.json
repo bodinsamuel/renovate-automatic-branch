@@ -25,7 +25,7 @@
     "dependency"
   ],
   "dependencies": {
-    "@actions/core": "1.11.1",
+    "@actions/core": "3.0.1",
     "@octokit/rest": "20.1.2",
     "typescript": "5.9.3"
   },
